@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyCarbone — Politique de confidentialité</title>
+  <style>
+    :root {
+      --ink:      #080d13;
+      --surface:  #0c1420;
+      --panel:    #111c2a;
+      --line:     rgba(255,255,255,0.07);
+      --line-mid: rgba(255,255,255,0.12);
+      --accent:   #4A9EFF;
+      --green:    #34C98A;
+      --amber:    #F5A623;
+      --red:      #E8524A;
+      --text-hi:  #F0F6FF;
+      --text-mid: #8BA8C4;
+      --text-lo:  #435B72;
+      --r:        6px;
+      --r2:       10px;
+      --mono: 'Courier New', Courier, monospace;
+      --sans: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ink);
+      color: var(--text-hi);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line-mid);
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-name {
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-hi);
+    }
+
+    .brand-sub { font-size: 11px; color: var(--text-lo); margin-top: 1px; }
+
+    .header-badge {
+      background: rgba(74,158,255,0.12);
+      border: 1px solid rgba(74,158,255,0.3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 52px 24px 36px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text-hi);
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .hero-meta-item {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-lo);
+    }
+    .hero-meta-item span { color: var(--text-mid); }
+
+    /* ── Résumé banner ── */
+    .summary-banner {
+      max-width: 800px;
+      margin: 32px auto 0;
+      padding: 0 24px;
+    }
+
+    .summary-box {
+      background: rgba(52,201,138,0.07);
+      border: 1px solid rgba(52,201,138,0.25);
+      border-left: 3px solid var(--green);
+      border-radius: var(--r);
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .summary-box strong { color: var(--green); }
+
+    /* ── Layout ── */
+    .layout {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      position: sticky;
+      top: 76px;
+    }
+
+    .toc-title {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      color: var(--text-lo);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .toc ul { list-style: none; display: flex; flex-direction: column; gap: 1px; }
+
+    .toc a {
+      display: block;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: var(--text-lo);
+      text-decoration: none;
+      border-radius: var(--r);
+      border-left: 2px solid transparent;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .toc a:hover { color: var(--text-mid); background: rgba(255,255,255,0.03); }
+
+    /* ── Content ── */
+    .content section { margin-bottom: 44px; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .content h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-hi);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-mid);
+    }
+
+    .content h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-mid);
+      margin: 24px 0 12px;
+      font-family: var(--mono);
+      letter-spacing: 0.5px;
+    }
+
+    .content p {
+      font-size: 14px;
+      color: var(--text-mid);
+      margin-bottom: 12px;
+      line-height: 1.75;
+    }
+
+    /* ── Lists ── */
+    .data-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .data-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 9px 14px;
+      font-size: 13px;
+      color: var(--text-mid);
+    }
+
+    .list-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .list-dot.red  { background: var(--red); }
+    .list-dot.green { background: var(--green); }
+
+    /* ── Permissions table ── */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .perm-table th {
+      text-align: left;
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--text-lo);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--line-mid);
+    }
+
+    .perm-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      color: var(--text-mid);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .perm-table tr:last-child td { border-bottom: none; }
+
+    .perm-table td:first-child {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* ── Rights grid ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 12px 14px;
+    }
+
+    .right-title {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .right-desc {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── Info card ── */
+    .info-card {
+      background: rgba(74,158,255,0.06);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--r);
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      margin: 12px 0 16px;
+      line-height: 1.65;
+    }
+
+    .info-card strong { color: var(--text-hi); }
+
+    /* ── Tiers table ── */
+    .tiers-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .tiers-table th {
+      text-align: left;
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--text-lo);
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--line-mid);
+    }
+
+    .tiers-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      color: var(--text-mid);
+    }
+
+    .tiers-table tr:last-child td { border-bottom: none; }
+    .tiers-table td:first-child { font-weight: 500; color: var(--text-hi); }
+
+    .badge-none {
+      display: inline-block;
+      background: rgba(52,201,138,0.1);
+      border: 1px solid rgba(52,201,138,0.25);
+      border-radius: 3px;
+      padding: 1px 8px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--green);
+      font-family: var(--mono);
+    }
+
+    /* ── Contact form ── */
+    .contact-section {
+      background: var(--surface);
+      border: 1px solid var(--line-mid);
+      border-radius: var(--r2);
+      padding: 24px;
+      margin-top: 8px;
+    }
+
+    .contact-email {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--panel);
+      border: 1px solid var(--line-mid);
+      border-radius: var(--r);
+      padding: 12px 16px;
+      margin-bottom: 24px;
+    }
+
+    .contact-email-icon { font-size: 18px; }
+
+    .contact-email-addr {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .contact-email-note {
+      font-size: 11px;
+      color: var(--text-lo);
+      margin-top: 2px;
+    }
+
+    .form-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .form-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .form-divider-text {
+      font-size: 11px;
+      color: var(--text-lo);
+      font-family: var(--mono);
+      letter-spacing: 0.5px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-lo);
+      letter-spacing: 0.5px;
+      font-family: var(--mono);
+      text-transform: uppercase;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      background: var(--panel);
+      border: 1px solid var(--line-mid);
+      border-radius: var(--r);
+      color: var(--text-hi);
+      font-family: var(--sans);
+      font-size: 13px;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      width: 100%;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(74,158,255,0.08);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: var(--text-lo); }
+
+    .form-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+
+    .form-select { cursor: pointer; }
+    .form-select option { background: var(--panel); }
+
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--r);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      margin-top: 4px;
+    }
+
+    .btn-submit:hover { opacity: 0.88; }
+    .btn-submit:active { transform: scale(0.99); }
+    .btn-submit:disabled { opacity: 0.5; cursor: wait; }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--text-lo);
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* Success / Error states */
+    .form-success {
+      display: none;
+      background: rgba(52,201,138,0.08);
+      border: 1px solid rgba(52,201,138,0.25);
+      border-radius: var(--r);
+      padding: 16px 20px;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .form-success.visible { display: block; }
+    .form-success-icon { font-size: 28px; margin-bottom: 8px; }
+    .form-success-title { font-weight: 700; color: var(--green); margin-bottom: 4px; }
+    .form-success-sub { font-size: 13px; color: var(--text-mid); }
+
+    .form-error {
+      display: none;
+      background: rgba(232,82,74,0.08);
+      border: 1px solid rgba(232,82,74,0.25);
+      border-radius: var(--r);
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--red);
+      margin-top: 10px;
+    }
+
+    .form-error.visible { display: block; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      padding: 24px;
+    }
+
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--text-lo); }
+
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-lo);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .rights-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <svg width="22" height="15" viewBox="0 0 20 14" fill="none">
+        <path d="M1 7 C3 1, 10 0, 18 2 C20 6, 17 13, 9 13 C4 13, 1 10, 1 7Z" fill="#111c2a" stroke="#2a3f52" stroke-width="0.8"/>
+        <path d="M10 3.5L7.5 7.5H10L8.5 11L13 6.5H10.5L12.5 3.5Z" fill="url(#lg)" />
+        <defs>
+          <linearGradient id="lg" x1="10" y1="3.5" x2="10" y2="11" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#aaff00"/>
+            <stop offset="100%" stop-color="#22aa00"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div>
+        <div class="brand-name">MyCarbone</div>
+        <div class="brand-sub">Extension navigateur</div>
+      </div>
+    </div>
+    <div class="header-badge">v4.1.0</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Document légal officiel</div>
+  <h1>Politique de confidentialité</h1>
+  <div class="hero-meta">
+    <div class="hero-meta-item">Version <span>1.1</span></div>
+    <div class="hero-meta-item">Publiée le <span>21 février 2026</span></div>
+    <div class="hero-meta-item">Extension <span>v4.1.0</span></div>
+    <div class="hero-meta-item">Contact <span>contact@mycarbone.org</span></div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-banner">
+  <div class="summary-box">
+    <strong>🔒 Résumé en une phrase :</strong> MyCarbone ne collecte aucune donnée personnelle, ne communique avec aucun serveur distant, et stocke vos données exclusivement dans votre navigateur. Vous en avez le contrôle total à tout moment.
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="layout">
+
+  <!-- TOC -->
+  <nav class="toc">
+    <div class="toc-title">Sommaire</div>
+    <ul>
+      <li><a href="#s1">1. Objet</a></li>
+      <li><a href="#s2">2. Éditeur</a></li>
+      <li><a href="#s3">3. Données collectées</a></li>
+      <li><a href="#s4">4. Permissions & technique</a></li>
+      <li><a href="#s5">5. Tiers & services externes</a></li>
+      <li><a href="#s6">6. Base légale RGPD</a></li>
+      <li><a href="#s7">7. Vos droits</a></li>
+      <li><a href="#s8">8. Sécurité</a></li>
+      <li><a href="#s9">9. Cookies</a></li>
+      <li><a href="#s10">10. Mineurs</a></li>
+      <li><a href="#s11">11. Modifications</a></li>
+      <li><a href="#s12">12. Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="content">
+
+    <section id="s1">
+      <div class="section-num">Section 01</div>
+      <h2>Objet de la présente politique</h2>
+      <p>La présente Politique de Confidentialité décrit la manière dont l'extension de navigateur <strong>MyCarbone</strong> (ci-après « l'Extension ») traite les informations de ses utilisateurs.</p>
+      <p>MyCarbone a été conçue selon le principe du <strong>Privacy by Design</strong> : la protection de votre vie privée est intégrée dans son architecture même, et non ajoutée après coup.</p>
+    </section>
+
+    <section id="s2">
+      <div class="section-num">Section 02</div>
+      <h2>Identité de l'éditeur</h2>
+      <p>L'extension MyCarbone est éditée de manière indépendante.</p>
+      <div class="info-card">
+        <strong>Email :</strong> contact@mycarbone.org<br>
+        <strong>Site web :</strong> guyleyne.github.io/legal.mycarbone<br>
+        <strong>Délai de réponse :</strong> 48h ouvrables garanties
+      </div>
+    </section>
+
+    <section id="s3">
+      <div class="section-num">Section 03</div>
+      <h2>Données collectées</h2>
+
+      <h3>3.1 — Ce que nous ne collectons PAS</h3>
+      <ul class="data-list">
+        <li><span class="list-dot red"></span>Votre identité (nom, prénom, email, adresse IP)</li>
+        <li><span class="list-dot red"></span>Votre historique de navigation</li>
+        <li><span class="list-dot red"></span>Le contenu de vos conversations avec les IA</li>
+        <li><span class="list-dot red"></span>Vos données professionnelles ou personnelles</li>
+        <li><span class="list-dot red"></span>Tout identifiant permettant de vous identifier</li>
+      </ul>
+
+      <h3>3.2 — Ce qui est stocké localement dans votre navigateur</h3>
+      <p>L'Extension stocke exclusivement les données suivantes dans le stockage local de votre navigateur (<code style="background:rgba(74,158,255,0.1);border-radius:3px;padding:1px 5px;font-size:12px;color:var(--accent)">chrome.storage.local</code>) :</p>
+      <ul class="data-list">
+        <li><span class="list-dot green"></span>Nombre de requêtes effectuées par plateforme IA</li>
+        <li><span class="list-dot green"></span>Estimation du CO₂ associé, calculée localement</li>
+        <li><span class="list-dot green"></span>Historique agrégé journalier (30 jours glissants maximum)</li>
+        <li><span class="list-dot green"></span>Votre budget carbone quotidien (si configuré)</li>
+        <li><span class="list-dot green"></span>La date de la dernière réinitialisation</li>
+      </ul>
+      <div class="info-card">Ces données sont <strong>strictement agrégées et anonymes par conception</strong>. Elles ne contiennent aucune information permettant de vous identifier ou d'identifier vos interlocuteurs.</div>
+    </section>
+
+    <section id="s4">
+      <div class="section-num">Section 04</div>
+      <h2>Permissions et fonctionnement technique</h2>
+
+      <h3>4.1 — Permissions déclarées et leur usage réel</h3>
+      <table class="perm-table">
+        <thead>
+          <tr><th>Permission</th><th>Usage réel dans l'extension</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>storage</td>
+            <td>Stockage local des statistiques CO₂ dans votre profil navigateur. Aucune donnée transmise à l'extérieur.</td>
+          </tr>
+          <tr>
+            <td>webRequest</td>
+            <td>Interception locale des <strong>URLs de destination uniquement</strong> vers les 25 plateformes IA surveillées. Le contenu des requêtes et des réponses n'est <strong>jamais</strong> lu, enregistré ou transmis.</td>
+          </tr>
+          <tr>
+            <td>notifications</td>
+            <td>Envoi d'une alerte locale lorsque votre budget carbone quotidien est atteint (à 90%). Entièrement local, désactivable dans les réglages.</td>
+          </tr>
+          <tr>
+            <td>downloads</td>
+            <td>Génération et téléchargement local des rapports HTML. Le fichier est créé dans votre navigateur et téléchargé directement sur votre appareil, sans transiter par aucun serveur.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.2 — Calcul du CO₂</h3>
+      <p>Le calcul est réalisé <strong>entièrement en local</strong>, dans votre navigateur, sur la base de facteurs d'émission publiquement documentés (Luccioni et al. 2023, IEA 2024, Goldman Sachs 2024). Aucune requête externe n'est effectuée pour ce calcul.</p>
+
+      <h3>4.3 — Génération des rapports</h3>
+      <p>Les rapports sont générés entièrement dans votre navigateur. Le fichier est téléchargé directement sur votre appareil sans transiter par aucun serveur tiers.</p>
+    </section>
+
+    <section id="s5">
+      <div class="section-num">Section 05</div>
+      <h2>Tiers et services externes</h2>
+      <p>MyCarbone ne partage vos données avec <strong>aucun tiers</strong>. L'extension ne contient aucun tracker analytique, aucun SDK publicitaire.</p>
+
+      <table class="tiers-table">
+        <thead>
+          <tr><th>Tiers</th><th>Accès à vos données</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Publicité / Marketing</td><td><span class="badge-none">AUCUN ACCÈS</span></td></tr>
+          <tr><td>Réseaux sociaux</td><td><span class="badge-none">AUCUN ACCÈS</span></td></tr>
+          <tr><td>Analytics / Tracking</td><td><span class="badge-none">AUCUN ACCÈS</span></td></tr>
+          <tr><td>Plateformes IA surveillées</td><td><span class="badge-none">AUCUN ACCÈS</span></td></tr>
+          <tr><td>Gouvernements / Autorités</td><td>Impossible — données 100% locales</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-card">
+        <strong>Note technique :</strong> L'extension utilise des polices système uniquement (Segoe UI, Courier New). Aucune requête n'est effectuée vers des CDN de polices (Google Fonts, Adobe, etc.).
+      </div>
+    </section>
+
+    <section id="s6">
+      <div class="section-num">Section 06</div>
+      <h2>Base légale du traitement (RGPD)</h2>
+      <p>Dans la mesure où les données traitées par l'Extension sont strictement locales, anonymes et non transmises à des tiers, MyCarbone n'est pas qualifié de <strong>« responsable de traitement »</strong> au sens de l'article 4 du RGPD.</p>
+      <p>L'Extension agit comme un outil de calcul local, au même titre qu'une calculatrice : elle traite des informations dans votre environnement, sans les transmettre à l'extérieur.</p>
+      <div class="info-card">Si vous utilisez MyCarbone dans un contexte professionnel impliquant des données d'employés, nous vous recommandons de consulter votre <strong>DPO</strong> afin d'évaluer les obligations applicables au sein de votre organisation.</div>
+    </section>
+
+    <section id="s7">
+      <div class="section-num">Section 07</div>
+      <h2>Vos droits</h2>
+      <p>Vous disposez d'un contrôle total et immédiat sur l'ensemble des données stockées par MyCarbone :</p>
+      <div class="rights-grid">
+        <div class="right-card">
+          <div class="right-title">👁 Consultation</div>
+          <div class="right-desc">Toutes les données sont visibles directement dans l'interface de l'Extension.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">✏️ Rectification</div>
+          <div class="right-desc">Vous pouvez ajuster votre budget carbone à tout moment dans les réglages.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">🗑 Suppression</div>
+          <div class="right-desc">Le bouton « Effacer toutes les données » dans Réglages supprime immédiatement et définitivement toutes les données locales.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">📤 Portabilité</div>
+          <div class="right-desc">Les données sont exportables via la fonction Rapport HTML disponible dans les réglages.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">🔌 Désactivation</div>
+          <div class="right-desc">La désinstallation de l'Extension supprime automatiquement toutes les données associées.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-title">⚖️ Recours CNIL</div>
+          <div class="right-desc">Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--accent)">www.cnil.fr</a></div>
+        </div>
+      </div>
+      <div class="info-card"><strong>Aucune demande auprès de notre équipe n'est nécessaire</strong> pour exercer vos droits : vous avez accès direct à vos données et pouvez les supprimer instantanément depuis l'Extension.</div>
+    </section>
+
+    <section id="s8">
+      <div class="section-num">Section 08</div>
+      <h2>Sécurité des données</h2>
+      <p>La sécurité des données est assurée par les mécanismes natifs des navigateurs :</p>
+      <ul class="data-list">
+        <li><span class="list-dot"></span><strong>Isolation</strong> — les données sont confinées au profil navigateur de l'utilisateur</li>
+        <li><span class="list-dot"></span><strong>Chiffrement</strong> — le stockage local des navigateurs modernes bénéficie du chiffrement système</li>
+        <li><span class="list-dot"></span><strong>Accès restreint</strong> — seule l'Extension MyCarbone peut accéder à ses propres données de stockage</li>
+        <li><span class="list-dot"></span><strong>Pas de transmission</strong> — l'absence de communication réseau élimine les risques d'interception</li>
+      </ul>
+    </section>
+
+    <section id="s9">
+      <div class="section-num">Section 09</div>
+      <h2>Cookies et technologies similaires</h2>
+      <p>MyCarbone n'utilise <strong>aucun cookie</strong>. Les données sont stockées via l'API <code style="background:rgba(74,158,255,0.1);border-radius:3px;padding:1px 5px;font-size:12px;color:var(--accent)">chrome.storage.local</code>, spécifique aux extensions de navigateur et distincte des cookies web classiques.</p>
+    </section>
+
+    <section id="s10">
+      <div class="section-num">Section 10</div>
+      <h2>Protection des mineurs</h2>
+      <p>MyCarbone ne collectant aucune donnée personnelle, aucune restriction d'âge n'est techniquement nécessaire. L'Extension peut être utilisée par des mineurs sans risque pour leur vie privée.</p>
+    </section>
+
+    <section id="s11">
+      <div class="section-num">Section 11</div>
+      <h2>Modifications de la présente politique</h2>
+      <p>Toute modification substantielle sera annoncée via les notes de mise à jour de l'Extension dans le Chrome Web Store / Firefox Add-ons.</p>
+      <p>La version en vigueur est toujours accessible depuis l'interface de l'Extension. La date de « Dernière révision » en en-tête indique quand la politique a été mise à jour.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="s12">
+      <div class="section-num">Section 12</div>
+      <h2>Contact et réclamations</h2>
+
+      <div class="contact-section">
+        <!-- Email direct -->
+        <div class="contact-email">
+          <div class="contact-email-icon">📧</div>
+          <div>
+            <div class="contact-email-addr">contact@mycarbone.org</div>
+            <div class="contact-email-note">Réponse garantie sous 48h ouvrables · Objet suggéré : [Confidentialité] Votre demande</div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="form-divider">
+          <div class="form-divider-line"></div>
+          <div class="form-divider-text">OU VIA LE FORMULAIRE</div>
+          <div class="form-divider-line"></div>
+        </div>
+
+        <!-- Form (Formspree) -->
+        <!-- 
+          INSTRUCTIONS POUR ACTIVER LE FORMULAIRE :
+          1. Créez un compte gratuit sur https://formspree.io
+          2. Créez un nouveau formulaire et copiez votre ID (ex: xyzwabcd)
+          3. Remplacez YOUR_FORMSPREE_ID ci-dessous par votre ID
+          4. Les messages arriveront directement sur contact@mycarbone.org
+        -->
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <input type="hidden" name="_subject" value="[MyCarbone] Message via politique de confidentialité">
+          <input type="hidden" name="_replyto" value="">
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="name">Nom complet</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Marie Dupont" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="vous@exemple.com" required>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="subject">Objet</label>
+              <select class="form-select" id="subject" name="subject">
+                <option value="confidentialite">Question sur la confidentialité</option>
+                <option value="rgpd">Demande RGPD (accès, suppression…)</option>
+                <option value="entreprise">Déploiement entreprise</option>
+                <option value="bug">Signalement d'un problème</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Décrivez votre demande…" required></textarea>
+            </div>
+          </div>
+
+          <button class="btn-submit" type="submit" id="submit-btn">
+            <span id="btn-text">Envoyer le message</span>
+          </button>
+
+          <p class="form-note">🔒 Vos données ne sont utilisées que pour répondre à votre demande. Aucun marketing.</p>
+        </form>
+
+        <!-- Success message -->
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">✅</div>
+          <div class="form-success-title">Message envoyé !</div>
+          <div class="form-success-sub">Nous vous répondrons sous 48h ouvrables à l'adresse indiquée.</div>
+        </div>
+
+        <!-- Error message -->
+        <div class="form-error" id="form-error">
+          Une erreur est survenue. Veuillez nous écrire directement à <strong>contact@mycarbone.org</strong>.
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 MyCarbone · Extension indépendante · v4.1.0</div>
+    <div class="footer-links">
+      <a href="https://guyleyne.github.io/deployment-guide.html/">Guide entreprise</a>
+      <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>
+      <a href="mailto:contact@mycarbone.org">contact@mycarbone.org</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Gestion du formulaire Formspree
+  const form = document.getElementById('contact-form');
+  const btn  = document.getElementById('submit-btn');
+  const btnTxt = document.getElementById('btn-text');
+  const success = document.getElementById('form-success');
+  const error   = document.getElementById('form-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    btn.disabled = true;
+    btnTxt.textContent = 'Envoi en cours…';
+    error.classList.remove('visible');
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        success.classList.add('visible');
+      } else {
+        throw new Error('Erreur serveur');
+      }
+    } catch (err) {
+      error.classList.add('visible');
+      btn.disabled = false;
+      btnTxt.textContent = 'Envoyer le message';
+    }
+  });
+</script>
+
+</body>
+</html>
